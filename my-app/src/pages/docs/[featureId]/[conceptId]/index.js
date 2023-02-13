@@ -6,8 +6,8 @@ function Concept(){
 
     return(
         <>
-        <h1>Feature {featureId}</h1>
-        <h2> Concept {conceptId}</h2>
+        <h1>{featureId}</h1>
+        <h2>{conceptId}</h2>
         </>
     )
 }
