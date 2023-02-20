@@ -6,7 +6,8 @@ function Home() {
 
   const handleClick = () => {
     console.log("Placing Order")
-    router.push('./product')
+    router.push('./product') //pushes new route 
+    // router.replace('./product')// replaces routes so when we go back we go to  tab
   }
   return(
   <>
