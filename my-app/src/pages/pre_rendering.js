@@ -1,10 +1,20 @@
 
 
 
-const PreRender = () => {
+const PreRender = ({ users }) => {
     return (
         <>
         <h1>Pre-Rendering List Of Users</h1>
+        {
+            users.map( user => {
+                return(
+                    <div key = {user.id}>
+                        <p>{user.name}</p>
+                        <p>{user.email}</p>
+                    </div>
+                )
+            })
+        }
         </>
     );
 }
