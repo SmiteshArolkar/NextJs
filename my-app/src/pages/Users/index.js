@@ -1,3 +1,4 @@
+import User from "@/components/user";
 import { resolve } from "styled-jsx/css";
 
 export async function getStaticProps() {
@@ -18,8 +19,7 @@ function UserList({ users }) {
         return (
           <div key={user.id}>
             <br></br>
-            <p>Name : {user.name}</p>
-            <p>Email : {user.email}</p>
+            <User user = {user}></User>
             <br></br>
           </div>
         );
