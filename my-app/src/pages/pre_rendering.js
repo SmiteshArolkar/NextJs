@@ -9,9 +9,11 @@ const PreRender = ({ users }) => {
             users.map( user => {
                 return(
                     <div key = {user.id}>
+                        <h4>UserName : {user.username}</h4>
                         <p>Name : {user.name}</p>
-                        <br></br>
                         <p>Email : {user.email}</p>
+                        <br></br>
+                        
                     </div>
                 )
             })
@@ -20,7 +22,7 @@ const PreRender = ({ users }) => {
     );
 }
 
-
+//returns json object
 export async function getStaticProps(){
     const response = await fetch('https://jsonplaceholder.typicode.com/users')
     const data = await response.json()
