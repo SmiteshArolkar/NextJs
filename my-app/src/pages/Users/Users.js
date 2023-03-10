@@ -3,6 +3,7 @@ async function getStaticProps(){
     const data = await response.json()
     console.log(data);
 }
+
 function UserList(){
     getStaticProps();
     return <h1>List of Users</h1>
