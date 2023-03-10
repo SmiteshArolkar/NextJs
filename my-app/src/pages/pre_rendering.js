@@ -9,8 +9,9 @@ const PreRender = ({ users }) => {
             users.map( user => {
                 return(
                     <div key = {user.id}>
-                        <p>{user.name}</p>
-                        <p>{user.email}</p>
+                        <p>Name : {user.name}</p>
+                        <br></br>
+                        <p>Email : {user.email}</p>
                     </div>
                 )
             })
