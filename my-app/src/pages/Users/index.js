@@ -1,16 +1,31 @@
-import { resolve } from "styled-jsx/css"
+import { resolve } from "styled-jsx/css";
 
-async function getStaticProps(){
-    const response = await fetch('https://jsonplaceholder.typicode.com/users')
-    const data = await response.json()
-    return data;
+export async function getStaticProps() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await response.json();
+  return {
+    props: {
+      users: data,
+    },
+  };
 }
 
-function UserList(){
-    getStaticProps().then((e) => {
-
-    })
-    return <h1>List of Users</h1>
+function UserList({ users }) {
+  return (
+    <>
+      <h1>User List</h1>
+      {users.map((user) => {
+        return (
+          <div key={user.id}>
+            <br></br>
+            <p>Name : {user.name}</p>
+            <p>Email : {user.email}</p>
+            <br></br>
+          </div>
+        );
+      })}
+    </>
+  );
 }
 
 export default UserList;
