@@ -1,15 +1,15 @@
-function Post({ post }) {
+import Post from "@/components/posts";
+
+function Post_render({ post }) {
   return (
     <>
-      <h2>
-        {post.id} {post.title}
-      </h2>
-      <p>{post.body}</p>
+      <Post post = {post}></Post>
+      <p>Post Body : {post.body}</p>
     </>
   );
 }
 
-export default Post;
+export default Post_render;
 
 export async function getStaticProps(Context) {
   const { params } = Context;
@@ -23,4 +23,23 @@ export async function getStaticProps(Context) {
       post: data,
     },
   };
+}
+
+
+export async function getStaticPaths(){
+    return {
+        paths : [
+            {
+            params : { postId : '1'}
+        },
+        {
+            params : { postId : '2'}
+        },
+        {
+            params : { postId : '3'}
+        },
+    ],
+    fallback : false
+
+    }
 }

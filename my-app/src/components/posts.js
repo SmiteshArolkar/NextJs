@@ -10,8 +10,8 @@ function Post({ post }) {
             borderRadius : '10px',
         }}>
             <br></br>
-            <p>Post Number : {post.userId}</p>
-            <p>{post.title}</p>
+            <p>Post Number : {post.id}</p>
+            <p>Post Title : {post.title}</p>
         </div>
         </Link>
         </>
