@@ -1,4 +1,5 @@
 import Post from "@/components/posts";
+import Link from "next/link";
 
 function PostList({ posts }) {
     return (
@@ -9,7 +10,9 @@ function PostList({ posts }) {
         {
             posts.map((post) => {
                 return (
+                    <div key={post.id}>
                     <Post post={post}></Post>
+                    </div>
                 )
             })
         }
