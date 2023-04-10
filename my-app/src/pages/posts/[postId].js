@@ -1,6 +1,14 @@
 import Post from "@/components/posts";
+import { useRouter } from "next/router";
 
 function Post_render({ post }) {
+  const router = useRouter();
+  if(router.isFallback)
+  {
+    return (
+      <h1>Loading...</h1>
+    )
+  }
   return (
     <>
       <Post post = {post}></Post>
@@ -39,7 +47,7 @@ export async function getStaticPaths(){
             params : { postId : '3'}
         },
     ],
-    fallback : false
+    fallback : true,
 
     }
 }
